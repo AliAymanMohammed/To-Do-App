@@ -2,13 +2,13 @@
 
 A schedules application
 
-introduction:
-This Application is for managing your schedules.
+Introduction:
+  This Application is for managing your schedules.
 
-about:
-- You can manage your own schedules set them to a specific time or days.
-- You will get Notified once the time of your task is ready.
-- You can move them to Done or Archived sections also.  
+About:
+  - You can manage your own schedules set them to a specific time or days.
+  - You will get Notified once the time of your task is ready.
+  - You can move them to Done or Archived sections also.  
 
 Dependencies:
   sqflite: ^1.3.2+4
@@ -19,3 +19,6 @@ Dependencies:
   hexcolor: ^2.0.0
   flutter_local_notifications: ^9.2.0
   
+  Installation :
+  you can dounloead the project from here => https://github.com/AliAymanMohammed/To-Do-App,
+  then implement it in your IDE(Android Studio or VSCode ) for Example.
