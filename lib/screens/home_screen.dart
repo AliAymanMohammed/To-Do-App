@@ -17,15 +17,12 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
 
+  var formKey = GlobalKey<FormState>();
   var taskTitleController = TextEditingController();
-
   var taskDescriptionController = TextEditingController();
-
   var taskTimeController = TextEditingController();
-
   TimeOfDay selectedTime;
   DateTime selectedDate;
-
   var taskDateController = TextEditingController();
 
 
@@ -50,6 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: (){
               showModalBottomSheet(context: context, builder: (context)=>
                   Form(
+                    key: formKey,
                     child: Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: SingleChildScrollView(
@@ -66,6 +64,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                     hintText: 'Task Title',
                                     border: InputBorder.none
                                 ),
+                                validator: (value){
+                                  if(value.isEmpty){
+                                    return 'Please Enter A Title';
+                                  }
+                                  return null;
+                                },
                                 keyboardType: TextInputType.text,
                                 controller: taskTitleController,
                               ),
@@ -82,6 +86,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                     hintText: 'Task Description',
                                     border: InputBorder.none
                                 ),
+                                validator: (value){
+                                  if(value.isEmpty){
+                                    return 'Please Enter A Description';
+                                  }
+                                  return null;
+                                },
                                 keyboardType: TextInputType.multiline,
                                 maxLines: 2,
                                 controller: taskDescriptionController,
@@ -99,6 +109,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                     hintText: 'Task Time',
                                     border: InputBorder.none
                                 ),
+                                validator: (value){
+                                  if(value.isEmpty){
+                                    return 'Please Select A Time';
+                                  }
+                                  return null;
+                                },
                                 keyboardType: TextInputType.datetime,
                                 controller: taskTimeController,
                                 onTap: ()=> showTimePicker(context: context, initialTime: TimeOfDay.now()).then((date) {
@@ -120,6 +136,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                     hintText: 'Task Date',
                                     border: InputBorder.none,
                                 ),
+                                validator: (value){
+                                  if(value.isEmpty){
+                                    return 'Please Select A Date';
+                                  }
+                                  return null;
+                                },
                                 keyboardType: TextInputType.datetime,
                                 controller: taskDateController,
                                 onTap: (){
@@ -148,10 +170,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                         var currentTimeSeconds = (currentTime.hour * 3600) + (currentTime.minute* 60);
                                         var selectedTimeSeconds = (selectedTime.hour * 3600) + (selectedTime.minute* 60);
                                         var timeInSeconds = selectedTimeSeconds - currentTimeSeconds;
-                                    NotificationService().showNotification(0,
-                                        'Your Task (${taskTitleController.text}) is ready to go',
-                                        taskDescriptionController.text,
-                                        (dateInSeconds+timeInSeconds),);
+                                        if(selectedTimeSeconds >= currentTimeSeconds){
+                                          NotificationService().showNotification(0,
+                                            'Your Task (${taskTitleController.text}) is ready to go',
+                                            taskDescriptionController.text,
+                                            (dateInSeconds+timeInSeconds),);
+                                        }
                                     taskTitleController.clear();
                                     taskDescriptionController.clear();
                                     taskTimeController.clear();
