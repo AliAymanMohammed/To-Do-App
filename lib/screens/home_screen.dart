@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey[400]),
+                                border: Border.all(color: Colors.black),
                               ),
                               child: TextFormField(
                                 decoration: const InputDecoration(
@@ -73,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             const SizedBox(height: 15,),
                             Container(
                               decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey[400]),
+                                border: Border.all(color: Colors.black),
                               ),
                               child: TextFormField(
                                 decoration: const InputDecoration(
@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             const SizedBox(height: 15,),
                             Container(
                               decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey[400]),
+                                border: Border.all(color: Colors.black),
                               ),
                               child: TextFormField(
                                 decoration: const InputDecoration(
@@ -111,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             const SizedBox(height: 15,),
                             Container(
                               decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey[400]),
+                                border: Border.all(color: Colors.black),
                               ),
                               child: TextFormField(
                                 decoration: const InputDecoration(
@@ -134,7 +134,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                FlatButton(onPressed: (){
+                                FlatButton(
+                                  onPressed: (){
                                   cubitListener.insertToDatabase(
                                       title: taskTitleController.text,
                                       description:taskDescriptionController.text ,
@@ -157,48 +158,63 @@ class _HomeScreenState extends State<HomeScreen> {
                                     taskDateController.clear();
                                     Navigator.of(context).pop();
                                   });
-
-                                }, child: const SizedBox(
+                                }, child: Container(
                                   height: 50,
                                   width: 100,
-                                  child:Card(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.green, width: 2),
+                                    borderRadius: BorderRadius.circular(20),
+                                    gradient:  LinearGradient(
+                                      colors:[
+                                        Colors.orange.withOpacity(0.4),
+                                        Colors.orange,
+                                      ],
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                    )
+                                  ),
+                                  child: const Center(
                                     child:
-                                    Center(
-                                      child:
-                                      Text(
-                                        'Add Task',
-                                        style: TextStyle(
-                                            color: Colors.white
-                                        ),
+                                    Text(
+                                      'Add Task',
+                                      style: TextStyle(
+                                          color: Colors.black,
                                       ),
                                     ),
-                                    elevation: 8,
-                                    color: Colors.blue,)
-                                  ,)
+                                  )
+                                  ,),
                                 ),
                                 FlatButton(
                                     onPressed: (){
-                                      taskTitleController.text = '';
-                                      taskDescriptionController.text = '';
-                                      taskTimeController.text = '';
-                                      taskDateController.text = '';
+                                      taskTitleController.clear();
+                                      taskDescriptionController.clear();
+                                      taskTimeController.clear();
+                                      taskDateController.clear();
                                       Navigator.of(context).pop();
-                                }, child: const SizedBox(
+                                }, child: Container(
                                   height: 50,
                                   width: 100,
-                                  child:Card(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.green , width: 2),
+                                    borderRadius: BorderRadius.circular(20),
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        Colors.orange.withOpacity(0.4),
+                                        Colors.orange,
+                                      ],
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                    ),
+                                  ),
+                                  child:const Center(
                                     child:
-                                    Center(
-                                      child:
-                                      Text(
-                                        'Cancel',
-                                        style: TextStyle(
-                                            color: Colors.white
-                                        ),
+                                    Text(
+                                      'Cancel',
+                                      style: TextStyle(
+                                          color: Colors.white
                                       ),
                                     ),
-                                    elevation: 8,
-                                    color: Colors.blue,)
+                                  )
                                   ,),
                                 ),
                               ],
@@ -207,7 +223,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-                  ),);
+                  ),
+                backgroundColor: Colors.grey[400]
+              );
             },
             child: const Icon(Icons.add , color: Colors.white,),
             elevation: 8,
