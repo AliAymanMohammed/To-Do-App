@@ -20,5 +20,5 @@ Dependencies:
   flutter_local_notifications: ^9.2.0
   
   Installation :
-  you can dounloead the project from here => https://github.com/AliAymanMohammed/To-Do-App,
-  then implement it in your IDE(Android Studio or VSCode ) for Example.
+  you can download the project from here => https://github.com/AliAymanMohammed/To-Do-App,
+  then implement it in your IDE(Android Studio or VSCode) for Example.
