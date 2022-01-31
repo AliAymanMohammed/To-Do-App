@@ -211,7 +211,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Text(
                                       'Cancel',
                                       style: TextStyle(
-                                          color: Colors.white
+                                          color: Colors.black
                                       ),
                                     ),
                                   )
