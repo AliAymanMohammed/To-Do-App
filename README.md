@@ -2,15 +2,20 @@
 
 A schedules application
 
-## Getting Started
+introduction:
+This Application is for managing your schedules.
 
-This project is a starting point for a Flutter application.
+about:
+- You can manage your own schedules set them to a specific time or days.
+- You will get Notified once the time of your task is ready.
+- You can move them to Done or Archived sections also.  
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Dependencies:
+  sqflite: ^1.3.2+4
+  intl: ^0.16.1
+  bloc: ^7.0.0
+  flutter_bloc: ^7.0.0
+  dio: ^3.0.10
+  hexcolor: ^2.0.0
+  flutter_local_notifications: ^9.2.0
+  
