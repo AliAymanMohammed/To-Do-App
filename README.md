@@ -1,6 +1,15 @@
 # todo
 
 A schedules application
+# Screen Shots
+<img src="Screen%20Shots/Task.jpeg" alt="Task" width="250" height = "450"/>
+<img src="Screen%20Shots/NewTask.jpeg" alt="New Task" width="250" height = "450"/>
+<img src="Screen%20Shots/DoneTask.jpeg" alt="Done Task" width="250" height = "450"/>
+<img src="Screen%20Shots/Done.jpeg" alt="Done" width="250" height = "450"/>
+<img src="Screen%20Shots/Archived.jpeg" alt="Archived" width="250" height = "450"/>
+<img src="Screen%20Shots/Floating.jpeg" alt="Floating" width="250" height = "450"/>
+<img src="Screen%20Shots/Notification.jpeg" alt="Notification" width="250" height = "450"/>
+<img src="Screen%20Shots/Delete.jpeg" alt="Delete" width="250" height = "450"/>
 
 Introduction:
   This Application is for managing your schedules.
